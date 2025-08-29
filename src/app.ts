@@ -43,6 +43,11 @@ io.on("connection", (socket) => {
   socket.on("stop_typing", () => {
     socket.broadcast.emit("hide_typing");
   });
+
+  socket.on("disconnect", () => {
+    // when a user disconnects
+    console.log("user disconnected");
+  });
 });
 
 export default httpServer;
